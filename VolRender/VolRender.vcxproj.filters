@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{470537de-5d86-45ea-85f2-323d04d7e3ba}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{6d8025e6-2a3a-4600-9174-328ffcb07956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxelize">
+      <UniqueIdentifier>{0f537817-7d93-4b03-af01-53a793f051a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VolumeRendering">
+      <UniqueIdentifier>{6ccea6f4-4096-48b9-9648-e55f9b135c49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{eadbf985-15fd-4c32-89bb-f66117cfd3a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageHelper.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3I.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthVoxelizationNode.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthVoxelizer.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelizationDumper.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelizationListener.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelizationNode.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="Voxelizer.h">
+      <Filter>Voxelize</Filter>
+    </ClInclude>
+    <ClInclude Include="TransferFunction.h">
+      <Filter>VolumeRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeRenderer.h">
+      <Filter>VolumeRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DObject.h" />
+    <ClInclude Include="ShaderFlags.h" />
+    <ClInclude Include="SkinnedMesh.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TransferFunctionControls.h" />
+    <ClInclude Include="Voxelization.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Voxelization.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AABB.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageHelper.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthVoxelizationNode.cpp">
+      <Filter>Voxelize</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthVoxelizer.cpp">
+      <Filter>Voxelize</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelizationDumper.cpp">
+      <Filter>Voxelize</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelizationNode.cpp">
+      <Filter>Voxelize</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxelizer.cpp">
+      <Filter>Voxelize</Filter>
+    </ClCompile>
+    <ClCompile Include="TransferFunction.cpp">
+      <Filter>VolumeRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumeRenderer.cpp">
+      <Filter>VolumeRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SkinnedMesh.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="TransferFunctionControls.cpp" />
+    <ClCompile Include="Voxelization.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FX Include="RenderScene.fx">
+      <Filter>Shaders</Filter>
+    </FX>
+    <FX Include="VolumeRendering.fx">
+      <Filter>Shaders</Filter>
+    </FX>
+    <FX Include="Voxelization.fx">
+      <Filter>Shaders</Filter>
+    </FX>
+  </ItemGroup>
+</Project>
