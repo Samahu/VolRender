@@ -8,7 +8,7 @@
 
 # Introduction
 A demo of performing voxelization on polygonal models then rendering the outcome of the voxelization using volumetric rendering technique implemented using C++, Win32, DirectX9 and HLSL.   
-The project was implemented to emulate the expected output and debug issues on the CSpace(TM) Static Volumetric Display (for more info refer to [my thesis](https://sites.google.com/site/ussamanaal/thesis)).   
+The project was implemented to emulate the expected output of the CSpace(TM) Static Volumetric Display and debug any issues (for more info refer to [my thesis](https://sites.google.com/site/ussamanaal/thesis)).   
 The code that controls the display and submits the commands is not included in this repository.
 
 # Screenshots
@@ -21,7 +21,7 @@ Polygon Rendering						|  Volumetric Rendering
 
 
 # Building the project
-To build this project you need to have [Microsoft DirectX SDK (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812) installed on your system. The DXSDK_DIR environment variable is typically added by the installer.
+To build this project you need to have [Microsoft DirectX SDK (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812) installed on your system. The **DXSDK_DIR** environment variable is typically added by the installer, however, make sure you re-open visual studio after SDK setup is finished.
 
 
 # Running the project
