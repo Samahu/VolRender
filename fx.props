@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(FXBeforeTargets)' == '' and '$(FXAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <FXBeforeTargets>Midl</FXBeforeTargets>
+    <FXAfterTargets>CustomBuild</FXAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FXDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(FXDependsOn)</FXDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <FX>
+      <CommandLineTemplate>fxc /Od /Zi /T fx_2_0 /Fo $(OutDir)%(Filename).fxo %(Filename)%(Extension)</CommandLineTemplate>
+      <Outputs>$(OutDir)%(Filename).fxo</Outputs>
+    </FX>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema
+      Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName
+      Include="FX">
+      <Targets>_FX</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="FX"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <Target
+    Name="_FX"
+    BeforeTargets="$(FXBeforeTargets)"
+    AfterTargets="$(FXAfterTargets)"
+    Condition="'@(FX)' != ''"
+    DependsOnTargets="$(FXDependsOn);ComputeFXOutput"
+    Outputs="%(FX.Outputs)"
+    Inputs="%(FX.Identity);%(FX.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <FX
+        Remove="@(FX)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <FX_tlog
+        Include="%(FX.Outputs)"
+        Condition="'%(FX.Outputs)' != '' and '%(FX.ExcludedFromBuild)' != 'true'">
+        <Source>@(FX, '|')</Source>
+      </FX_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(FX.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(FX_tlog)' != '' and '%(FX_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)$(ProjectName).write.1u.tlog"
+      Lines="^%(FX_tlog.Source);@(FX_tlog-&gt;'%(Fullpath)')"
+      Encoding="Unicode" />
+    <FX
+      Condition="'@(FX)' != '' and '%(FX.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(FX.CommandLineTemplate)"
+      AdditionalOptions="%(FX.AdditionalOptions)"
+      Inputs="%(FX.Identity)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            ComputeFXOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            ComputeFXOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="ComputeFXOutput"
+    Condition="'@(FX)' != ''">
+    <ItemGroup>
+      <FXDirsToMake
+        Condition="'@(FX)' != '' and '%(FX.ExcludedFromBuild)' != 'true'"
+        Include="%(FX.Outputs)" />
+      <Link
+        Include="%(FXDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(FXDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(FXDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(FXDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+</Project>

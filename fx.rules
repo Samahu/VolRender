@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioToolFile
+	Name="FX Compiler"
+	Version="8.00"
+	>
+	<Rules>
+		<CustomBuildRule
+			Name="FX"
+			CommandLine="fxc /Od /Zi /T fx_2_0 /Fo $(OutDir)\$(InputName).fxo $(InputFileName)"
+			Outputs="$(OutDir)\$(InputName).fxo"
+			FileExtensions="*.fx"
+			>
+			<Properties>
+			</Properties>
+		</CustomBuildRule>
+	</Rules>
+</VisualStudioToolFile>
