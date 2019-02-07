@@ -8,7 +8,8 @@
 
 # Introduction
 A demo of performing voxelization on polygonal models then rendering the outcome of the voxelization using volumetric rendering technique implemented using C++, Win32, DirectX9 and HLSL.   
-The project was implemented to emulate the expected output and debug issues on the CSpace(TM) Static Volumetric Display (for more info refer to [my thesis](https://sites.google.com/site/ussamanaal/thesis)). The code that controls the display and submits the commands is not included in this repository.
+The project was implemented to emulate the expected output and debug issues on the CSpace(TM) Static Volumetric Display (for more info refer to [my thesis](https://sites.google.com/site/ussamanaal/thesis)).   
+The code that controls the display and submits the commands is not included in this repository.
 
 # Screenshots
 Polygon Rendering						|  Volumetric Rendering
