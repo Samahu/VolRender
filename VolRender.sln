@@ -21,81 +21,94 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VolRender", "VolRender\VolR
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD} = {E0CF097B-F22D-465B-A884-D89E55BD7ECD}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D3DX", "D3DX", "{98ABD90D-6681-44C1-8311-38A9D569BC8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{50EE7DC5-9CFD-47F2-8530-1147E5609C64}"
+	ProjectSection(SolutionItems) = preProject
+		D3DX\Include\D3DX10.h = D3DX\Include\D3DX10.h
+		D3DX\Include\d3dx10async.h = D3DX\Include\d3dx10async.h
+		D3DX\Include\D3DX10core.h = D3DX\Include\D3DX10core.h
+		D3DX\Include\D3DX10math.h = D3DX\Include\D3DX10math.h
+		D3DX\Include\D3DX10math.inl = D3DX\Include\D3DX10math.inl
+		D3DX\Include\D3DX10mesh.h = D3DX\Include\D3DX10mesh.h
+		D3DX\Include\D3DX10tex.h = D3DX\Include\D3DX10tex.h
+		D3DX\Include\d3dx9.h = D3DX\Include\d3dx9.h
+		D3DX\Include\d3dx9anim.h = D3DX\Include\d3dx9anim.h
+		D3DX\Include\d3dx9core.h = D3DX\Include\d3dx9core.h
+		D3DX\Include\d3dx9effect.h = D3DX\Include\d3dx9effect.h
+		D3DX\Include\d3dx9math.h = D3DX\Include\d3dx9math.h
+		D3DX\Include\d3dx9math.inl = D3DX\Include\d3dx9math.inl
+		D3DX\Include\d3dx9mesh.h = D3DX\Include\d3dx9mesh.h
+		D3DX\Include\d3dx9shader.h = D3DX\Include\d3dx9shader.h
+		D3DX\Include\d3dx9shape.h = D3DX\Include\d3dx9shape.h
+		D3DX\Include\d3dx9tex.h = D3DX\Include\d3dx9tex.h
+		D3DX\Include\d3dx9xof.h = D3DX\Include\d3dx9xof.h
+		D3DX\Include\DxErr.h = D3DX\Include\DxErr.h
+		D3DX\Include\dxsdkver.h = D3DX\Include\dxsdkver.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{EA64B47C-96FE-4657-8036-3EDEBACCB71D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{7861D970-0F82-49FD-ADD5-A78D27A61557}"
+	ProjectSection(SolutionItems) = preProject
+		D3DX\Lib\x86\d3dx10.lib = D3DX\Lib\x86\d3dx10.lib
+		D3DX\Lib\x86\d3dx10d.lib = D3DX\Lib\x86\d3dx10d.lib
+		D3DX\Lib\x86\d3dx9.lib = D3DX\Lib\x86\d3dx9.lib
+		D3DX\Lib\x86\d3dx9d.lib = D3DX\Lib\x86\d3dx9d.lib
+		D3DX\Lib\x86\DxErr.lib = D3DX\Lib\x86\DxErr.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{56D92A3D-D74B-4776-96F9-C44AD95E3CB5}"
+	ProjectSection(SolutionItems) = preProject
+		D3DX\Lib\x64\d3dx10.lib = D3DX\Lib\x64\d3dx10.lib
+		D3DX\Lib\x64\d3dx10d.lib = D3DX\Lib\x64\d3dx10d.lib
+		D3DX\Lib\x64\d3dx9.lib = D3DX\Lib\x64\d3dx9.lib
+		D3DX\Lib\x64\d3dx9d.lib = D3DX\Lib\x64\d3dx9d.lib
+		D3DX\Lib\x64\DxErr.lib = D3DX\Lib\x64\DxErr.lib
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
-		Profile|Any CPU = Profile|Any CPU
-		Profile|Mixed Platforms = Profile|Mixed Platforms
 		Profile|Win32 = Profile|Win32
 		Profile|x64 = Profile|x64
-		Release|Any CPU = Release|Any CPU
-		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|Win32 = Release|Win32
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|Mixed Platforms.Build.0 = Debug|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|Win32.ActiveCfg = Debug|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|Win32.Build.0 = Debug|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|x64.ActiveCfg = Debug|x64
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Debug|x64.Build.0 = Debug|x64
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|Any CPU.ActiveCfg = Profile|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|Mixed Platforms.ActiveCfg = Profile|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|Mixed Platforms.Build.0 = Profile|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|Win32.ActiveCfg = Profile|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|Win32.Build.0 = Profile|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|x64.ActiveCfg = Profile|x64
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Profile|x64.Build.0 = Profile|x64
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|Any CPU.ActiveCfg = Release|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|Win32.ActiveCfg = Release|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|Win32.Build.0 = Release|Win32
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|x64.ActiveCfg = Release|x64
 		{E0CF097B-F22D-465B-A884-D89E55BD7ECD}.Release|x64.Build.0 = Release|x64
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|Mixed Platforms.Build.0 = Debug|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|Win32.ActiveCfg = Debug|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|Win32.Build.0 = Debug|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|x64.ActiveCfg = Debug|x64
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Debug|x64.Build.0 = Debug|x64
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|Any CPU.ActiveCfg = Profile|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|Mixed Platforms.ActiveCfg = Profile|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|Mixed Platforms.Build.0 = Profile|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|Win32.ActiveCfg = Profile|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|Win32.Build.0 = Profile|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|x64.ActiveCfg = Profile|x64
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Profile|x64.Build.0 = Profile|x64
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|Any CPU.ActiveCfg = Release|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|Win32.ActiveCfg = Release|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|Win32.Build.0 = Release|Win32
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|x64.ActiveCfg = Release|x64
 		{9F64786D-4F8F-43BF-ADA0-133ABAE1E52D}.Release|x64.Build.0 = Release|x64
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Mixed Platforms.Build.0 = Debug|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|Win32.Build.0 = Debug|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|x64.ActiveCfg = Debug|x64
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Debug|x64.Build.0 = Debug|x64
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Any CPU.ActiveCfg = Profile|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Mixed Platforms.ActiveCfg = Profile|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Mixed Platforms.Build.0 = Profile|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Win32.ActiveCfg = Profile|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|Win32.Build.0 = Profile|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|x64.ActiveCfg = Profile|x64
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Profile|x64.Build.0 = Profile|x64
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Any CPU.ActiveCfg = Release|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Win32.ActiveCfg = Release|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|Win32.Build.0 = Release|Win32
 		{D3D0911F-96D0-4629-88B8-122C0256058C}.Release|x64.ActiveCfg = Release|x64
@@ -103,6 +116,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98ABD90D-6681-44C1-8311-38A9D569BC8C} = {B7355F2C-E46E-46B7-A5B1-CA44FF2EF300}
+		{50EE7DC5-9CFD-47F2-8530-1147E5609C64} = {98ABD90D-6681-44C1-8311-38A9D569BC8C}
+		{EA64B47C-96FE-4657-8036-3EDEBACCB71D} = {98ABD90D-6681-44C1-8311-38A9D569BC8C}
+		{7861D970-0F82-49FD-ADD5-A78D27A61557} = {EA64B47C-96FE-4657-8036-3EDEBACCB71D}
+		{56D92A3D-D74B-4776-96F9-C44AD95E3CB5} = {EA64B47C-96FE-4657-8036-3EDEBACCB71D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ADEE77AB-D454-4B56-9457-AD574AC5CAA7}

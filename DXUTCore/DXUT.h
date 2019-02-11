@@ -11,7 +11,7 @@
 #error "DXUT requires a Unicode build."
 #endif
 
-#include "dxsdkver.h"
+#include <dxsdkver.h>
 #if ( _DXSDK_PRODUCT_MAJOR < 9 || _DXSDK_BUILD_MAJOR < 1949 )
 #error The installed DXSDK is out of date.
 #endif
@@ -74,7 +74,10 @@
 #include <limits.h>      
 #include <stdio.h>
 
+#pragma warning( push )
+#pragma warning( disable : 4458 )
 #include <GDIPlus.h>
+#pragma warning( pop )
 
 // CRT's memory leak detection
 #if defined(DEBUG) || defined(_DEBUG)
