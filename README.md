@@ -21,8 +21,8 @@ Polygon Rendering						|  Volumetric Rendering
 
 
 # Building the project
-~~To build this project you need to have [Microsoft DirectX SDK (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812) installed on your system. The **DXSDK_DIR** environment variable is typically added by the installer, however, make sure you re-open visual studio after SDK setup is finished.~~
-You can build the project without having to install "Microsoft DirectX SDK (June 2010)". However, as of now you may only be able to run release builds.
+~~To build this project you need to have [Microsoft DirectX SDK (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=6812) installed on your system. The **DXSDK_DIR** environment variable is typically added by the installer, however, make sure you re-open visual studio after SDK setup is finished.~~   
+You can build the project without having to install "Microsoft DirectX SDK (June 2010)". ~~However, as of now you may only be able to run release builds.~~
 
 # Running the project
 Everytime you run the executable, you would need to set the "Transfer Function". You do this by clicking on the "Config Transfer Function" button. Once you do so, the interface will show you a widget that allows you to add,  delete points or move them around. You add new points with a left click, you remove a point with right click. To move a point you hover the cursor over an existing point then press and hold the left mouse button and then move the point. Release the left mouse button when you are done.   
