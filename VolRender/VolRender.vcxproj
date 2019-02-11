@@ -161,7 +161,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command />
+      <Command>copy $(SolutionDir)D3DX\Runtime\$(PlatformShortName)\*.dll $(SolutionDir)bin\$(PlatformShortName)\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -200,7 +200,7 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command />
+      <Command>copy $(SolutionDir)D3DX\Runtime\$(PlatformShortName)\*.dll $(SolutionDir)bin\$(PlatformShortName)\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
