@@ -12,14 +12,6 @@
 #include "AABB.h"
 #include "Voxelization.h"
 #include "VoxelizationNode.h"
-
-// #define CSPACE_ENABLED
-
-#ifdef CSPACE_ENABLED
-#	include "CSpaceDX.h"
-#	include "ConfigureCSpaceDlg.h"
-#endif
-
 #include "TransferFunctionControls.h"
 
 //--------------------------------------------------------------------------------------
@@ -37,8 +29,7 @@
 #define IDC_VOXELIZE					1015
 #define IDC_DUMP_SLICES					1016
 #define IDC_SAVE_VOXELIZATION			1017
-#define IDC_ATTACH_CSPACE				1018
-#define IDC_ADJUST_VOXEL_TRANSPARENCY	1019
+#define IDC_ADJUST_VOXEL_TRANSPARENCY	1018
 
 //--------------------------------------------------------------------------------------
 // Global variables
@@ -63,11 +54,6 @@ D3DXHANDLE g_ParamWorldViewProj;
 D3DXHANDLE g_ParamWorld;
 D3DXHANDLE g_ParamMeshTexture;
 DWORD g_dwShaderFlags = 0;
-
-#ifdef CSPACE_ENABLED
-CSpaceDX g_CSpaceDX;
-ConfigureCSpaceDlg g_ConfigureCSpaceDlg;
-#endif
 
 ConfigureTransferFunctionDlg g_ConfigureTransferFunctionDlg;
 
@@ -202,11 +188,6 @@ void InitApp()
     g_SettingsDlg.Init(&g_DialogResourceManager);
 	g_HUD.Init(&g_DialogResourceManager);
     g_SampleUI.Init(&g_DialogResourceManager);
-
-#ifdef CSPACE_ENABLED
-	g_ConfigureCSpaceDlg.Init(&g_DialogResourceManager);
-#endif
-
 	g_ConfigureTransferFunctionDlg.Init(&g_DialogResourceManager);
 
 	int iY = 10;
@@ -268,10 +249,6 @@ void CALLBACK ExitApp(void* userContext)
 
 	SAFE_DELETE(g_VolumeRenderer);
 	SAFE_DELETE(g_Voxelizer);
-
-#ifdef CSPACE_ENABLED
-	g_CSpaceDX.Destroy();
-#endif
 
 	Gdiplus::GdiplusShutdown(g_gdiplusToken);
 }
@@ -470,11 +447,6 @@ HRESULT CALLBACK OnD3D9CreateDevice( IDirect3DDevice9* device, const D3DSURFACE_
 
     V_RETURN( g_DialogResourceManager.OnD3D9CreateDevice( device ) );
     V_RETURN( g_SettingsDlg.OnD3D9CreateDevice( device ) );
-
-#ifdef CSPACE_ENABLED
-	g_ConfigureCSpaceDlg.OnCreateDevice(device);
-#endif
-
 	g_ConfigureTransferFunctionDlg.OnCreateDevice(device);
 
     V_RETURN( D3DXCreateFont( device, 15, 0, FW_BOLD, 1, FALSE, DEFAULT_CHARSET,
@@ -522,11 +494,6 @@ HRESULT CALLBACK OnD3D9ResetDevice( IDirect3DDevice9* device,
 
     V_RETURN( g_DialogResourceManager.OnD3D9ResetDevice() );
     V_RETURN( g_SettingsDlg.OnD3D9ResetDevice() );
-
-#ifdef CSPACE_ENABLED
-	g_ConfigureCSpaceDlg.OnResetDevice(pBackBufferSurfaceDesc->Width, pBackBufferSurfaceDesc->Height);
-#endif
-
 	g_ConfigureTransferFunctionDlg.OnResetDevice(pBackBufferSurfaceDesc->Width, pBackBufferSurfaceDesc->Height);
 
     V_RETURN( g_pFont9->OnResetDevice() );
@@ -729,11 +696,6 @@ void CALLBACK OnD3D9FrameRender(IDirect3DDevice9* device, double fTime, float fE
 		if (g_ConfigVoxelization)
 			V( g_SampleUI.OnRender(fElapsedTime) );
 
-#ifdef CSPACE_ENABLED
-		if (g_ConfigureCSpaceDlg.IsActive())
-			g_ConfigureCSpaceDlg.OnRender(fElapsedTime);
-#endif
-
 		if (g_ConfigureTransferFunctionDlg.IsActive())
 			g_ConfigureTransferFunctionDlg.OnRender(fElapsedTime);
 
@@ -762,14 +724,6 @@ LRESULT CALLBACK MsgProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, bo
         return 0;
     }
 
-#ifdef CSPACE_ENABLED
-	if (g_ConfigureCSpaceDlg.IsActive())
-	{
-		*pbNoFurtherProcessing = g_ConfigureCSpaceDlg.MsgProc(hWnd, uMsg, wParam, lParam);
-		if( *pbNoFurtherProcessing )
-			return 0;
-	}
-#endif
 
 	if (g_ConfigureTransferFunctionDlg.IsActive())
 	{
@@ -956,19 +910,6 @@ void CALLBACK OnGUIEvent( UINT nEvent, int nControlID, CDXUTControl* pControl, v
 				}
 			}
 			break;
-
-#ifdef CSPACE_ENABLED
-		case IDC_ATTACH_CSPACE:
-			{
-				g_AttachCSpace = !g_AttachCSpace;
-
-				if (g_AttachCSpace)
-					g_Voxelizer->AddVoxelizationListener(&g_CSpaceDX);
-				else
-					g_Voxelizer->RemoveVoxelizationListener(&g_CSpaceDX);
-			}
-			break;
-#endif
     }
 }
 
@@ -980,11 +921,6 @@ void CALLBACK OnD3D9LostDevice( void* pUserContext )
 {
     g_DialogResourceManager.OnD3D9LostDevice();
     g_SettingsDlg.OnD3D9LostDevice();
-
-#ifdef CSPACE_ENABLED
-	g_ConfigureCSpaceDlg.OnLostDevice();
-#endif
-
 	g_ConfigureTransferFunctionDlg.OnLostDevice();
 
     g_pFont9->OnLostDevice();
@@ -1021,11 +957,6 @@ void CALLBACK OnD3D9DestroyDevice( void* pUserContext )
 
     g_DialogResourceManager.OnD3D9DestroyDevice();
     g_SettingsDlg.OnD3D9DestroyDevice();
-
-#ifdef CSPACE_ENABLED
-	g_ConfigureCSpaceDlg.OnDestroyDevice();
-#endif
-
 	g_ConfigureTransferFunctionDlg.OnDestroyDevice();
 
 	SAFE_RELEASE(g_Effect);

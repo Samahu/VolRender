@@ -80,6 +80,4 @@ public:
     void OnDestroyDevice();
 
 	bool MsgProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-
-	void SetCSpace(class CSpaceDX *cspaceDX);
 };
